@@ -24,7 +24,7 @@
     color: #ff9700;
 }
 .text-container h5{
-    font-size: 30px;
+    font-size: 20px;
     color: #000000;
 }
 
@@ -62,5 +62,27 @@ img {
     to {
         opacity: 1;
         transform: translateX(0); /* Moves into view */
+    }
+}
+
+@media (max-width: 800px) {
+    .landing-container {
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 0 2rem;
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+    .text-container {
+        flex: 1;
+        text-align: center;
+    }
+
+    .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
     }
 }
