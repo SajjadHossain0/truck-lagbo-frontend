@@ -7,18 +7,15 @@
     background-color: #ffffff;
     overflow: hidden;
 }
-
 .text-container {
     flex: 1;
     text-align: left;
 }
-
 .image-container {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-
 .text-container h1{
     font-size: 50px;
     color: #ff9700;
@@ -27,20 +24,16 @@
     font-size: 20px;
     color: #000000;
 }
-
-
 .text-container h1, h5 {
     margin: 0;
     opacity: 0; /* Initially hidden */
     transform: translateX(-50px); /* Initial position offscreen */
     animation: slide-in-left 1s ease-out forwards; /* Slide-in animation */
 }
-
-h5 {
+.text-container h5 {
     animation-delay: 0.2s; /* Delays the subtitle animation */
 }
-
-img {
+.image-container img {
     max-width: 100%;
     height: auto;
     width: 100%;
@@ -48,6 +41,10 @@ img {
     transform: translateX(50px); /* Initial position offscreen */
     animation: slide-in-right 1s ease-out forwards; /* Slide-in animation */
     animation-delay: 0.4s; /* Delays the image animation */
+}
+
+.search-container{
+    margin-bottom: 100px;
 }
 
 /* Slide-in animations */
