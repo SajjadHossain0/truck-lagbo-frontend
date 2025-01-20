@@ -14,13 +14,14 @@
     padding: 10px;
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 992px) {
     .header-logo{
         font-weight: bold;
         font-size: 30px;
     }
     .header-buttons{
-        display: none;
+        display: flex;
     }
     .header-buttons div{
         padding: 10px;
