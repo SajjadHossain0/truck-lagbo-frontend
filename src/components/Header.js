@@ -24,23 +24,25 @@ export default function Header() {
         handleMenuClose();
     };
 
-    return (<div className="header-container">
+    return (
+
+        <div className="header-container">
         <div className="header-logo">
             <span>Truck Lagbo ?</span>
         </div>
         <div className="header-buttons">
             <div>
-                <Button color="warning" outline>
+                <Button className="login-btn" color="warning" outline>
                     Login
                 </Button>
             </div>
             <div>
-                <Button color="warning">
+                <Button className="driver-reg-btn" color="warning">
                     Register as Driver
                 </Button>
             </div>
             <div>
-                    <Avatar onClick={handleMenuOpen} alt="Sajjad Hossain" src="/static/images/avatar/1.jpg"/>
+                <Avatar onClick={handleMenuOpen} alt="Sajjad Hossain" src="/static/images/avatar/1.jpg"/>
 
                 {/* Dropdown Menu */}
                 <Menu
@@ -48,12 +50,10 @@ export default function Header() {
                     open={open} // Is the menu open
                     onClose={handleMenuClose} // Close menu on outside click
                     anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "right",
+                        vertical: "bottom", horizontal: "right",
                     }}
                     transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
+                        vertical: "top", horizontal: "right",
                     }}
                 >
                     {/* Menu Options */}

@@ -1,7 +1,15 @@
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    align-items: center;
+    padding: 7px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .header-logo{
     font-weight: bold;
@@ -25,5 +33,17 @@
     }
     .header-buttons div{
         padding: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .header-logo{
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .header-buttons .login-btn{
+        display: none;
+    }
+    .header-buttons .driver-reg-btn{
+        display: none;
     }
 }
