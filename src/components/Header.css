@@ -11,15 +11,25 @@
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.header-logo{
+.header-logo a{
     font-weight: bold;
     font-size: 30px;
+    text-decoration: none;
+    color: #000000;
 }
 .header-buttons{
     display: flex;
 }
 .header-buttons div{
     padding: 10px;
+}
+.login-btn a{
+    color: #ffb114;
+    text-decoration: none;
+}
+.menu-item a{
+    color: #000000;
+    text-decoration: none;
 }
 
 

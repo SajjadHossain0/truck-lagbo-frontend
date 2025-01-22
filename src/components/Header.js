@@ -28,12 +28,12 @@ export default function Header() {
 
         <div className="header-container">
         <div className="header-logo">
-            <span>Truck Lagbo ?</span>
+            <span><a href="/">Truck Lagbo ?</a></span>
         </div>
         <div className="header-buttons">
             <div>
                 <Button className="login-btn" color="warning" outline>
-                    Login
+                   <a href="/auth">Login</a>
                 </Button>
             </div>
             <div>
@@ -57,16 +57,16 @@ export default function Header() {
                     }}
                 >
                     {/* Menu Options */}
-                    <MenuItem onClick={() => handleMenuItemClick("Profile")}>
+                    <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Profile")}>
                         Profile
                     </MenuItem>
-                    <MenuItem onClick={() => handleMenuItemClick("Settings")}>
+                    <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Settings")}>
                         Settings
                     </MenuItem>
-                    <MenuItem onClick={() => handleMenuItemClick("Logout")}>
+                    <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Logout")}>
                         Logout
                     </MenuItem>
-                    <MenuItem onClick={() => handleMenuItemClick("Login")}>Login</MenuItem>
+                    <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Login")}><a href="/auth">Login</a></MenuItem>
                 </Menu>
 
             </div>
