@@ -32,15 +32,15 @@ export default function Header() {
         </div>
         <div className="header-buttons">
             <div>
-                <Button className="login-btn" color="warning" outline>
-                   <a href="/auth">Login</a>
-                </Button>
+                <a href="/auth"><Button className="login-btn" color="warning" outline>
+                    Login
+                </Button></a>
             </div>
             <div>
-                <Button className="driver-reg-btn" color="warning">
+                <a href="/driver-registration"><Button className="driver-reg-btn" color="warning">
                     Register as Driver
-                </Button>
-            </div>
+            </Button></a>
+        </div>
             <div>
                 <Avatar onClick={handleMenuOpen} alt="Sajjad Hossain" src="/static/images/avatar/1.jpg"/>
 
