@@ -21,10 +21,12 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                {/*    Search field*/
-                }
+                {/*Search field*/}
                 <div align="center" className="search-container">
                     <SearchInput/>
+                </div>
+                <div align="center" className="feedback-container">
+
                 </div>
             </div>
         </>
