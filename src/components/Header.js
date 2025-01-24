@@ -28,7 +28,7 @@ export default function Header() {
 
         <div className="header-container">
         <div className="header-logo">
-            <span><a href="/">Truck Lagbo ?</a></span>
+            <span><a href="/">MalBahi</a></span>
         </div>
         <div className="header-buttons">
             <div>
