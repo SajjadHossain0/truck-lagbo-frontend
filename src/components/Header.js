@@ -61,7 +61,7 @@ export default function Header() {
                         Profile
                     </MenuItem>
                     <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Settings")}>
-                        Settings
+                        <a href="/settings">Settings</a>
                     </MenuItem>
                     <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Logout")}>
                         Logout

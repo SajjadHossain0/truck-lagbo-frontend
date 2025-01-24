@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AuthForm from "./components/Authentication/AuthForm";
 import DriverRegistration from "./components/Authentication/DriverRegistration";
+import SettingsPage from "./components/SettingsPage";
 
 function App() {
     return (
@@ -21,6 +22,12 @@ function App() {
                 </Routes>
                 <Routes>
                     <Route path="/driver-registration" element={<DriverRegistration/>}/>
+                </Routes>
+                <Routes>
+                    <Route path="/profile" element={<ProfilePage/>}/>
+                </Routes>
+                <Routes>
+                    <Route path="/settings" element={<SettingsPage/>}/>
                 </Routes>
 
             </BrowserRouter>

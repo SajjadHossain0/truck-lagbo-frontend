@@ -1,0 +1,53 @@
+.setting-container {
+    max-width: 95%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.setting-header {
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.card {
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.avatar-user {
+    background-color: #FFB74D;
+}
+
+.avatar-lock {
+    background-color: #4CAF50;
+}
+
+.avatar-key {
+    background-color: #2196F3;
+}
+
+.avatar-edit {
+    background-color: #FF5722;
+}
+
+.card-title {
+    margin-top: 1rem;
+}
+
+.card-description {
+    color: text.secondary;
+}
+
+.card-button {
+    margin-top: 1rem;
+    width: 100%;
+}

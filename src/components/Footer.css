@@ -1,5 +1,6 @@
 /* Ensures the footer sticks to the bottom of the page */
 .page-container {
+    margin-top: 85px;
     display: flex;
     flex-direction: column;
 }
