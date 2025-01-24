@@ -1,28 +1,63 @@
 import React from "react";
-import { Box, Typography, Grid, Paper, Button, Avatar } from "@mui/material";
+import {Box, Typography, Grid, Paper, TextField, Button, Avatar,} from "@mui/material";
 import { FaUserCircle, FaLock, FaKey, FaEdit } from "react-icons/fa";
-import './SettingsPage.css';
 
 export default function SettingsPage() {
     return (
-        <Box className="setting-container">
-            <Typography className="setting-header" variant="h4" gutterBottom>
+        <Box
+            sx={{
+                maxWidth: "95%",
+                margin: "2rem auto",
+                padding: "1rem",
+                marginTop: "80px"
+            }}
+        >
+            <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                    textAlign: "center",
+                    marginBottom: "1.5rem",
+                    fontSize: { xs: "1.5rem", md: "2rem" },
+                }}
+            >
                 Settings
             </Typography>
+
+            {/* Settings Options */}
             <Grid container spacing={3}>
                 {/* Profile Section */}
                 <Grid item xs={12} sm={6} md={4}>
-                    <Paper elevation={3} className="card">
-                        <Avatar className="avatar avatar-user">
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            padding: "1.5rem",
+                            textAlign: "center",
+                            borderRadius: "12px",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: 80,
+                                height: 80,
+                                margin: "0 auto",
+                                backgroundColor: "#FFB74D",
+                            }}
+                        >
                             <FaUserCircle size={40} />
                         </Avatar>
-                        <Typography className="card-title" variant="h6">
+                        <Typography variant="h6" sx={{ marginTop: "1rem" }}>
                             Edit Profile
                         </Typography>
-                        <Typography className="card-description" variant="body2">
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
                             Update your personal information and profile photo.
                         </Typography>
-                        <Button className="card-button" variant="contained" color="primary">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            sx={{ marginTop: "1rem" }}
+                            fullWidth
+                        >
                             Edit Profile
                         </Button>
                     </Paper>
@@ -30,17 +65,36 @@ export default function SettingsPage() {
 
                 {/* Change Password Section */}
                 <Grid item xs={12} sm={6} md={4}>
-                    <Paper elevation={3} className="card">
-                        <Avatar className="avatar avatar-lock">
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            padding: "1.5rem",
+                            textAlign: "center",
+                            borderRadius: "12px",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: 80,
+                                height: 80,
+                                margin: "0 auto",
+                                backgroundColor: "#4CAF50",
+                            }}
+                        >
                             <FaLock size={40} />
                         </Avatar>
-                        <Typography className="card-title" variant="h6">
+                        <Typography variant="h6" sx={{ marginTop: "1rem" }}>
                             Change Password
                         </Typography>
-                        <Typography className="card-description" variant="body2">
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
                             Update your password to keep your account secure.
                         </Typography>
-                        <Button className="card-button" variant="contained" color="success">
+                        <Button
+                            variant="contained"
+                            color="success"
+                            sx={{ marginTop: "1rem" }}
+                            fullWidth
+                        >
                             Change Password
                         </Button>
                     </Paper>
@@ -48,17 +102,36 @@ export default function SettingsPage() {
 
                 {/* Forgot Password Section */}
                 <Grid item xs={12} sm={6} md={4}>
-                    <Paper elevation={3} className="card">
-                        <Avatar className="avatar avatar-key">
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            padding: "1.5rem",
+                            textAlign: "center",
+                            borderRadius: "12px",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: 80,
+                                height: 80,
+                                margin: "0 auto",
+                                backgroundColor: "#2196F3",
+                            }}
+                        >
                             <FaKey size={40} />
                         </Avatar>
-                        <Typography className="card-title" variant="h6">
+                        <Typography variant="h6" sx={{ marginTop: "1rem" }}>
                             Forgot Password
                         </Typography>
-                        <Typography className="card-description" variant="body2">
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
                             Reset your password if you’ve forgotten it.
                         </Typography>
-                        <Button className="card-button" variant="contained" color="info">
+                        <Button
+                            variant="contained"
+                            color="info"
+                            sx={{ marginTop: "1rem" }}
+                            fullWidth
+                        >
                             Reset Password
                         </Button>
                     </Paper>
@@ -66,17 +139,36 @@ export default function SettingsPage() {
 
                 {/* Edit Details Section */}
                 <Grid item xs={12} sm={6} md={4}>
-                    <Paper elevation={3} className="card">
-                        <Avatar className="avatar avatar-edit">
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            padding: "1.5rem",
+                            textAlign: "center",
+                            borderRadius: "12px",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: 80,
+                                height: 80,
+                                margin: "0 auto",
+                                backgroundColor: "#FF5722",
+                            }}
+                        >
                             <FaEdit size={40} />
                         </Avatar>
-                        <Typography className="card-title" variant="h6">
+                        <Typography variant="h6" sx={{ marginTop: "1rem" }}>
                             Edit Details
                         </Typography>
-                        <Typography className="card-description" variant="body2">
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
                             Update additional details for your account.
                         </Typography>
-                        <Button className="card-button" variant="contained" color="secondary">
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            sx={{ marginTop: "1rem" }}
+                            fullWidth
+                        >
                             Edit Details
                         </Button>
                     </Paper>
