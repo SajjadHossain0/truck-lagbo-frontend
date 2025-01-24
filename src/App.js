@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AuthForm from "./components/Authentication/AuthForm";
 import DriverRegistration from "./components/Authentication/DriverRegistration";
 import SettingsPage from "./components/SettingsPage";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
     return (

@@ -58,7 +58,7 @@ export default function Header() {
                 >
                     {/* Menu Options */}
                     <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Profile")}>
-                        Profile
+                        <a href="/profile">Profile</a>
                     </MenuItem>
                     <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Settings")}>
                         <a href="/settings">Settings</a>
