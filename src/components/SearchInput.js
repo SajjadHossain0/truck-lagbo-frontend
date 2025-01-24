@@ -235,7 +235,7 @@ export default function SearchInput(props) {
                                     <a href={`tel:${driver.number}`}>
                                         <Button
                                             variant="contained"
-                                            color="primary"
+                                            color="warning"
                                             fullWidth
                                             sx={{
                                                 borderRadius: "0 0 8px 8px",
