@@ -7,7 +7,6 @@ import {useNavigate} from "react-router-dom";
 export default function Header() {
     const [isLogin, setLogin] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
-    const navigate = useNavigate();
 
     const open = Boolean(anchorEl);
     const handleMenuOpen = (event) => {
@@ -30,7 +29,6 @@ export default function Header() {
     const handleLogout = () => {
         localStorage.removeItem("token");
         setLogin(false);
-        navigate("/")
     }
 
     return (

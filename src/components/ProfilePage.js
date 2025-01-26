@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Card, CardContent, Typography, Grid } from "@mui/material";
+import {Avatar, Card, CardContent, Grid, Typography} from "@mui/material";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import './ProfilePage.css';
 
