@@ -1,28 +1,37 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Header.css';
 import {Button} from "reactstrap";
-import {Avatar, IconButton, Menu, MenuItem} from "@mui/material";
+import {Avatar, Menu, MenuItem} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 export default function Header() {
-
+    const [isLogin, setLogin] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+    const navigate = useNavigate();
 
-    // Handle menu open
+    const open = Boolean(anchorEl);
     const handleMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
-
-    // Handle menu close
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
-
-    // Menu item click handler
     const handleMenuItemClick = (option) => {
         console.log(`${option} clicked`);
         handleMenuClose();
     };
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setLogin(!!token);
+    })
+    const handleLogin = () => {
+    }
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        setLogin(false);
+        navigate("/")
+    }
 
     return (
 

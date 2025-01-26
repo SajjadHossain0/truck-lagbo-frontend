@@ -25,7 +25,7 @@ function App() {
                     <Route path="/driver-registration" element={<DriverRegistration/>}/>
                 </Routes>
                 <Routes>
-                    <Route path="/profile" element={<ProfilePage/>}/>
+                    <Route Path="/profile" element={<ProfilePage/>}/>
                 </Routes>
                 <Routes>
                     <Route path="/settings" element={<SettingsPage/>}/>
