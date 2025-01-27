@@ -13,26 +13,17 @@ function App() {
     return (
         <div className="App">
 
-            <Header/>
             <BrowserRouter>
+                <Header/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                </Routes>
-                <Routes>
                     <Route path="/auth" element={<AuthForm/>}/>
-                </Routes>
-                <Routes>
                     <Route path="/driver-registration" element={<DriverRegistration/>}/>
-                </Routes>
-                <Routes>
-                    <Route Path="/profile" element={<ProfilePage/>}/>
-                </Routes>
-                <Routes>
                     <Route path="/settings" element={<SettingsPage/>}/>
+                    <Route path="/profile" element={<ProfilePage/>}/>
                 </Routes>
-
+                <Footer/>
             </BrowserRouter>
-            <Footer/>
 
         </div>
     );

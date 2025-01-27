@@ -3,6 +3,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './AuthForm.css';
+import API_CLINT from "../API_CLINT";
+import {useNavigate} from "react-router-dom";
 
 const AuthForm = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const AuthForm = () => {
         confirmPassword: "",
     });
     const [isLogin, setIsLogin] = useState(true);
+    const navigate = useNavigate();
 
     const toggleForm = () => {
         setIsLogin(!isLogin);
@@ -35,10 +38,11 @@ const AuthForm = () => {
             if (isLogin) {
                 // Login API request
                 const { email, password } = formData;
-                const response = await axios.post("/api/auth/login", { email, password });
+                const response = await API_CLINT.post("/auth/login", { email, password });
                 toast.success(`Welcome back, ${response.data.fullname || "User"}!`);
                 // Store the token in localStorage
                 localStorage.setItem("token", response.data.token);
+                navigate("/");
             } else {
                 // Registration API request
                 const { fullname, email, password, confirmPassword } = formData;
@@ -48,7 +52,7 @@ const AuthForm = () => {
                     return;
                 }
 
-                await axios.post("/api/auth/register", { fullname, email, password });
+                await API_CLINT.post("/auth/register", { fullname, email, password });
                 toast.success("Registration successful! Please log in.");
                 toggleForm();
             }
