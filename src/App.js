@@ -8,6 +8,7 @@ import AuthForm from "./components/Authentication/AuthForm";
 import DriverRegistration from "./components/Authentication/DriverRegistration";
 import SettingsPage from "./components/SettingsPage";
 import ProfilePage from "./components/ProfilePage";
+import ForgotPassword from "./components/Authentication/ForgotPassword";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/auth" element={<AuthForm/>}/>
+                    <Route path="/forget-pass" element={<ForgotPassword/>}/>
                     <Route path="/driver-registration" element={<DriverRegistration/>}/>
                     <Route path="/settings" element={<SettingsPage/>}/>
                     <Route path="/profile" element={<ProfilePage/>}/>

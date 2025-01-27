@@ -34,6 +34,12 @@
     font-size: 14px;
 }
 
+.forget-pass a{
+    color: #00baff;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
 .auth-button {
     width: 100%;
     padding: 10px;
@@ -45,6 +51,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .auth-button:hover {
@@ -55,9 +62,6 @@
     text-align: center;
     margin-top: 10px;
     color: #666;
-}
-.toggle-form a{
-
 }
 
 .toggle-form span, a {

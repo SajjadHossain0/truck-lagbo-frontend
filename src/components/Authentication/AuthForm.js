@@ -107,10 +107,13 @@ const AuthForm = () => {
                         required
                     />
                 </div>
+                {isLogin && (
+                    <div align="right" className="forget-pass"><a href="/forget-pass">Forget Password?</a></div>
+                )}
 
                 {!isLogin && (
                     <div className="form-group">
-                        <label htmlFor="confirmPassword">Confirm Password</label>
+                    <label htmlFor="confirmPassword">Confirm Password</label>
                         <input
                             type="password"
                             id="confirmPassword"
