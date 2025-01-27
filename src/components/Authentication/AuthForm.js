@@ -41,6 +41,7 @@ const AuthForm = () => {
                 toast.success(`Welcome back, ${response.data.fullname || "User"}!`);
                 // Store the token in localStorage
                 localStorage.setItem("token", response.data.token);
+                localStorage.setItem("userId", response.data.userId);
                 navigate("/");
             } else {
                 // Registration API request

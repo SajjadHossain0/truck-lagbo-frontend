@@ -2,14 +2,21 @@ import React, {useState} from "react";
 import {Box, Typography, Grid, Paper, Button, Avatar,} from "@mui/material";
 import { FaUserCircle, FaLock, FaKey, FaEdit } from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
+import ChangePasswordModal from "./Authentication/ChangePassword";
 
 export default function SettingsPage() {
-
+    const [isModalOpen, setModalOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleForgotPassword = async (e) => {
         navigate("/forget-pass")
     }
+
+
+    const handleChangePassword = () => {
+        navigate("/change-password")
+    };
+
 
     return (
         <Box
@@ -102,9 +109,11 @@ export default function SettingsPage() {
                             color="success"
                             sx={{ marginTop: "1rem" }}
                             fullWidth
+                            onClick={() => handleChangePassword()}
                         >
                             Change Password
                         </Button>
+
                     </Paper>
                 </Grid>
 
