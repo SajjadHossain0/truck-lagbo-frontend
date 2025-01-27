@@ -9,7 +9,6 @@ import {
     Grid,
     Checkbox,
     FormControlLabel,
-    MenuItem,
 } from "@mui/material";
 
 const DriverRegistration = () => {

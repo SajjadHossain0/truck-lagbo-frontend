@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Typography, Grid, Paper, TextField, Button, Avatar,} from "@mui/material";
+import {Box, Typography, Grid, Paper, Button, Avatar,} from "@mui/material";
 import { FaUserCircle, FaLock, FaKey, FaEdit } from "react-icons/fa";
 
 export default function SettingsPage() {

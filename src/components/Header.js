@@ -20,20 +20,11 @@ export default function Header() {
         console.log(`${option} clicked`);
         handleMenuClose();
     };
-    const handleMenuItemClickLink = (option) => {
-        navigate(`/${option.toLowerCase()}`); // Navigate to the corresponding route
-        handleMenuClose();
-    };
-
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         setLogin(!!token);
     })
-
-    const handleLogin = () => {
-        navigate("/auth");
-    }
     const handleLogout = () => {
         localStorage.removeItem("token");
         setLogin(false);
