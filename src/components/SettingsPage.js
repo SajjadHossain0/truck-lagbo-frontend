@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import {Box, Typography, Grid, Paper, Button, Avatar,} from "@mui/material";
 import { FaUserCircle, FaLock, FaKey, FaEdit } from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 export default function SettingsPage() {
+
+    const navigate = useNavigate();
+
+    const handleForgotPassword = async (e) => {
+        navigate("/forget-pass")
+    }
+
     return (
         <Box
             sx={{
@@ -131,6 +139,7 @@ export default function SettingsPage() {
                             color="info"
                             sx={{ marginTop: "1rem" }}
                             fullWidth
+                            onClick={() => handleForgotPassword()}
                         >
                             Reset Password
                         </Button>
