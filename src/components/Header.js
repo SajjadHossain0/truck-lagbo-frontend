@@ -20,6 +20,9 @@ export default function Header() {
         console.log(`${option} clicked`);
         handleMenuClose();
     };
+    const linkClicked = (link) => {
+        navigate(link)
+    }
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -72,25 +75,28 @@ export default function Header() {
                         }}
                     >
                         {/* Menu Options */}
-                        <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Profile")}>
-                            <a href="/profile">Profile</a>
+                        <a href="/profile" className="menu-item-a">
+                            <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Profile")}>
+                            Profile
                         </MenuItem>
-
-                        <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Settings")}>
-                            <a href="/settings">Settings</a>
+                        </a>
+                        <a href="/settings" className="menu-item-a">
+                            <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Settings")}>
+                            Settings
                         </MenuItem>
+                        </a>
 
                         {!isLogin ? (
-                            <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Login")}>
-                                <a href="/auth">Login</a>
+                            <a href="/auth" className="menu-item-a">
+                                <MenuItem className="menu-item" onClick={() => handleMenuItemClick("Login")}>
+                                Login
                             </MenuItem>
-                        ):(
+                            </a>
+                        ) : (
                             <MenuItem className="menu-item" onClick={() => handleLogout()}>
                                 Logout
                             </MenuItem>
                         )}
-
-
 
 
                     </Menu>

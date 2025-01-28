@@ -30,9 +30,15 @@ function App() {
                     <Route path="/forget-pass" element={<ForgotPassword/>}/>
                     <Route path="/reset-password" element={<ResetPassword/>}/>
                     <Route path="/driver-registration" element={<DriverRegistration/>}/>
-                    <Route path="/settings" element={<SettingsPage/>}/>
+                    <Route path="/settings" element={
+                        isLogin ? (<SettingsPage/>):(<AuthForm/>)
+                    }/>
                     <Route path="//change-password" element={<ChangePassword/>}/>
-                    <Route path="/profile" element={<ProfilePage/>}/>
+                    <Route path="/profile" element={
+                        isLogin ? (<ProfilePage/>) : (<AuthForm/>)
+                    }/>
+
+
                 </Routes>
                 <Footer/>
             </BrowserRouter>
