@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Avatar, Card, CardContent, Grid, Typography} from "@mui/material";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import './ProfilePage.css';
+import API_CLINT from "./API_CLINT";
 
 export default function ProfilePage() {
+    const [userData, setUserData] = useState(null);
+    const userId = localStorage.getItem("userId");
+
+
+    useEffect(() => {
+        API_CLINT
+            .get(`/users/${userId}`)
+            .then((response) => {
+                setUserData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching user data:", error);
+            });
+    }, [userId]);
+
     return (
         <div className="profile-container">
             {/* Profile Section */}
@@ -15,10 +31,7 @@ export default function ProfilePage() {
                         className="profile-avatar"
                     />
                     <Typography variant="h5" className="profile-name">
-                        Sajjad Hossain
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                        Junior Java Developer
+                        {userData.fullname}
                     </Typography>
                 </Card>
             </div>
@@ -31,7 +44,7 @@ export default function ProfilePage() {
                             <CardContent>
                                 <Typography variant="h6">Contact Information</Typography>
                                 <Typography variant="body2">
-                                    <FaEnvelope className="icon" /> sajjad@example.com
+                                    <FaEnvelope className="icon" /> {userData.email}
                                 </Typography>
                                 <Typography variant="body2">
                                     <FaPhone className="icon" /> +880-123-456789
