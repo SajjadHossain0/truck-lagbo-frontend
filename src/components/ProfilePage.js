@@ -6,12 +6,24 @@ import API_CLINT from "./API_CLINT";
 
 export default function ProfilePage() {
     const [userData, setUserData] = useState(null);
+    const [driverData, setDriverData] = useState(null);
     const userId = localStorage.getItem("userId");
 
 
     useEffect(() => {
         API_CLINT
             .get(`/users/${userId}`)
+            .then((response) => {
+                setUserData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching user data:", error);
+            });
+    }, [userId]);
+
+    useEffect(() => {
+        API_CLINT
+            .get(`/driver/${userId}`)
             .then((response) => {
                 setUserData(response.data);
             })
