@@ -11,6 +11,7 @@ export default function ProfilePage() {
 
 
     useEffect(() => {
+        if (!userId) return;
         API_CLINT
             .get(`/users/${userId}`)
             .then((response) => {
@@ -19,18 +20,20 @@ export default function ProfilePage() {
             .catch((error) => {
                 console.error("Error fetching user data:", error);
             });
-    }, [userId]);
 
-    useEffect(() => {
         API_CLINT
             .get(`/driver/${userId}`)
             .then((response) => {
-                setUserData(response.data);
+                setDriverData(response.data);
             })
             .catch((error) => {
                 console.error("Error fetching user data:", error);
             });
     }, [userId]);
+
+    if (!userData) {
+        return <p>Loading user data...</p>;
+    }
 
     return (
         <div className="profile-container">
