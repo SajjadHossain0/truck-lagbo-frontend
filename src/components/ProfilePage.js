@@ -3,6 +3,7 @@ import {Avatar, Card, CardContent, Grid, Typography} from "@mui/material";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import './ProfilePage.css';
 import API_CLINT from "./API_CLINT";
+import CustomLoading from "./CustomLoading";
 
 export default function ProfilePage() {
     const [userData, setUserData] = useState(null);
@@ -32,7 +33,7 @@ export default function ProfilePage() {
     }, [userId]);
 
     if (!userData) {
-        return <p>Loading user data...</p>;
+        return <CustomLoading/>;
     }
 
     return (
