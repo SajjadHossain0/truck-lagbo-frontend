@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 
 const DriverRegistration = () => {
+    const userId = localStorage.getItem("userId");
     const { handleSubmit, control } = useForm();
 
     const vehicleTypes = ["Truck", "Van", "Pickup"];
@@ -21,8 +22,43 @@ const DriverRegistration = () => {
     const size = ["10ft", "30ft", "50ft"];
     const weight = ["100kg", "200kg", "300kg"];
 
-    const onSubmit = (data) => {
-        console.log("Driver Registration Data:", data);
+    const onSubmit = async (data) => {
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("number", data.number);
+
+        if (data.photo && data.photo[0]) {
+            formData.append("photo", data.photo[0]);
+        } else {
+            console.warn("No photo selected");
+        }
+
+        formData.append("vehicaltype", data.vehicleType);
+        formData.append("weight", data.weight);
+        formData.append("size", data.truckSize);
+        formData.append("registrationnumber", data.registrationNumber);
+        formData.append("servicearea", data.serviceArea);
+        formData.append("price", data.price);
+
+        try {
+            const response = await fetch(`http://localhost:8080/api/driver/register/${userId}`, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Registration Successful:", result);
+                alert("Driver registered successfully!");
+            } else {
+                const errorText = await response.text();
+                console.error("Registration Failed:", errorText);
+                alert("Registration failed: " + errorText);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred during registration.");
+        }
     };
 
     return (
@@ -71,7 +107,17 @@ const DriverRegistration = () => {
                             <Typography variant="body1" gutterBottom>
                                 Upload Photo
                             </Typography>
-                            <TextField type="file" inputProps={{ accept: "image/*" }} fullWidth />
+                            <Controller
+                                name="photo"
+                                control={control}
+                                render={({ field }) => (
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        {...field} // Bind to react-hook-form
+                                    />
+                                )}
+                            />
                         </Grid>
 
                         {/* Vehicle Type */}
@@ -188,3 +234,4 @@ const DriverRegistration = () => {
 };
 
 export default DriverRegistration;
+
